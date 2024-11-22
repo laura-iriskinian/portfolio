@@ -1,0 +1,161 @@
+/* sélecteur universel pour éviter marges */
+*{
+    margin:0;
+    padding: 0;
+}
+
+/*éléments présents avant responsive */
+body{
+    border:solid black;
+    /*position absolute permet à l'ul de ne pas dépasser*/
+    position: absolute;
+}
+nav{
+    display: flex;
+}
+
+#logo{
+    margin:20px;
+    margin-top: 20px;
+}
+
+.nav{
+    font-family: 'Titillium Web';
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+}
+
+.hvr-shutter-out-horizontal /*début transition bouttons*/{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    border:solid #000;
+    border-style: double;
+  }
+  
+  .hvr-shutter-out-horizontal:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    opacity: 30%;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+
+  .hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  } 
+
+    /*fin transition*/
+
+
+
+
+/*représente l'ensemble de la liste*/
+/*mettre le flex dans cette partie*/
+ul{
+    display: flex;
+    padding: 0;
+    list-style: none;
+    /*nécessité d'augmenter la width au maximum pour que le justify content fonctionne
+    car si la largeur n'est pas assez importante les changements n'ont pas la place de s'appliquer*/
+    width:100%;
+}
+
+/*représente les éléments de la liste*/
+/*flex ne fonctionne pas dans cette partie*/
+li{
+    margin: 50px;
+    padding:15px;
+}
+
+/*importance de l'ordre si text-decoration first, modif pas prisent en compte*/
+li a{
+    color:black;
+    text-decoration: none;
+}
+
+/*Début main*/
+h1{
+    font-size: medium;
+}
+h2{
+    font-size: 40px;
+}
+button{
+    background-color: #000;
+    padding: 15px;
+}
+button a{
+    color:#fff;
+    font-family:'Titillium Web';
+    margin:20px;
+    font-size: large;
+}
+article{
+    display: flex;
+    justify-content: space-around; 
+}
+
+h3{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.software{
+    display:flex;
+    justify-content:space-around;
+}
+
+footer{
+    display:flex;
+    height: 150px;
+}
+
+#logo{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.gitfooter{
+    display:flex;
+    justify-content:flex-end;
+}
+.seemore{
+    font-family: 'Titillium Web';
+    font-size: large;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.github{
+    margin:30px;
+}
+
+
+@media screen and (min-width:769px) and (max-width:1599px){
+    body{
+        width:100%;
+    }
+    nav ul{
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 20px;
+    }
+}
